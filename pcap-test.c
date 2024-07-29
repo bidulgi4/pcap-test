@@ -88,9 +88,9 @@ void packet_handler(u_char *user, const struct pcap_pkthdr *h, const u_char *byt
 	}
 	}
 	printf("\n------------------------------------------------------------------\n");
-}
+	}
 
-int main(int argc, char *argv[]) {
+    int main(int argc, char *argv[]) {
     char *dev;
     char errbuf[PCAP_ERRBUF_SIZE];
     pcap_t *handle;
@@ -122,9 +122,10 @@ int main(int argc, char *argv[]) {
 
         packet_handler(NULL, &header, packet);
         packet_count++;
-
-    	printf("3 packets captured\n");
-    	pcap_close(handle);
     }
+	pcap_close(handle);
+	printf("3 packets captured\n");
+    	
+   
     	printf("Capture end\n");
 }
