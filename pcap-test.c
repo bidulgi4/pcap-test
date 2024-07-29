@@ -85,10 +85,9 @@ void packet_handler(u_char *user, const struct pcap_pkthdr *h, const u_char *byt
         printf("Data (Hex): ");
         for (int i = 0; i < print_length; i++) {
         printf("%02x ", payload[i]);
-}
+	}
+	}
 	printf("\n------------------------------------------------------------------\n");
-}
-
 }
 
 int main(int argc, char *argv[]) {
